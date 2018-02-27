@@ -1,0 +1,20 @@
+﻿@model DemoPage.ViewModels.CategoryViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Lista clanaka</h2>
+@if (Model.Articles.Count() > 0)
+{
+<ul>
+@foreach (var item in Model.Articles)
+{
+        <li><a href="/Article/Index/@item.ArticleId"> @item.Title</a></li>
+}
+</ul>
+}
+else {
+    <p>U kategoriji  nema članaka</p>
+}

@@ -1,0 +1,83 @@
+﻿@model DemoPage.ViewModels.HomeIndexViewModel
+@{
+    ViewBag.Title = "Pocetna";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<!-- Indicators -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="image">
+                <img class="img-responsive" src="~/Content/images/slideimg.jpg">
+            </div>
+            <div class="carousel-caption">
+                <p>Ovdje ide neki tekst</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="image">
+                <img class="img-responsive" src="~/Content/images/slideimg.jpg">
+            </div>
+            <div class="carousel-caption">
+                <p>Ovdje ide neki tekst</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="image">
+                <img class="img-responsive" src="~/Content/images/slideimg.jpg">
+            </div>
+            <div class="carousel-caption">
+                <p>Ovdje ide neki tekst</p>
+            </div>
+        </div>
+    </div>
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="fa fa-angle-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="fa fa-angle-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+</div>
+@foreach (var item in Model.FeaturedCategories)
+{
+
+<div class="news-list">
+    <div class="news-list-title">@item.Name</div>
+    <div class="news-items">
+        <div class="row">
+            @foreach (var article in Model.GetLastThreeArticles(item.CategoryId))
+            {
+            <div class="col-xs-12 col-sm-4 col-md-4 news-item" style="padding-top:10px;">
+            @if(article.Image != null && article.Image!="") {
+                <img src="@article.Image" class="img-responsive" width="100%">
+            }
+            else
+            {
+                <img src="~/Content/images/NoImage.png" class="img-responsive" width="100%">
+            }
+                <h3 class="news-item-title"><a href="#">@article.Title</a></h3>
+                @if (article.Content.Length > 100)
+                {
+                    <p>@article.Content.Substring(0, 100); </p>
+                }
+                else
+                {
+                     <p>@article.Content</p>
+                }
+            </div><!--/.col-xs-6.col-lg-4-->
+            }
+        </div>
+    </div>
+</div><!--/row-->
+}
+

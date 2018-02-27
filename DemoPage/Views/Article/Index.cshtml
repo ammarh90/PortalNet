@@ -1,0 +1,8 @@
+﻿@model DemoPage.ViewModels.ArticleViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>@Model.Article.Title</h2>
+<p>@MvcHtmlString.Create(Model.Article.Content.Replace(System.Environment.NewLine, "<br />"))</p>
