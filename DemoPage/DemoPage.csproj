@@ -134,22 +134,29 @@
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Database\Config\ArticleConfig.cs" />
     <Compile Include="Database\Config\CategoryConfig.cs" />
     <Compile Include="Database\Config\SettingConfig.cs" />
+    <Compile Include="Database\Config\UserConfig.cs" />
     <Compile Include="Database\DataContext.cs" />
     <Compile Include="Database\DemoDataFromDb.cs" />
     <Compile Include="Database\Entity\Article.cs" />
     <Compile Include="Database\Entity\Category.cs" />
     <Compile Include="Database\Entity\Setting.cs" />
+    <Compile Include="Database\Entity\User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ArticleViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModels.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
     <Compile Include="ViewModels\HomeIndexViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\RegistrationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -167,6 +174,8 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Article\Index.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Registration\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

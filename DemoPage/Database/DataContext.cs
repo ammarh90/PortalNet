@@ -18,6 +18,7 @@ namespace DemoPage.Database
         public DbSet<Category> Categories { get; set; }
         public DbSet<Article> Articles { get; set; }
         public DbSet<Setting> Settings { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -25,6 +26,7 @@ namespace DemoPage.Database
             modelBuilder.Configurations.Add(new CategoryConfig());
             modelBuilder.Configurations.Add(new ArticleConfig());
             modelBuilder.Configurations.Add(new SettingConfig());
+            modelBuilder.Configurations.Add(new UserConfig());
 
         }
     }

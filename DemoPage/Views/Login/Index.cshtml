@@ -1,0 +1,24 @@
+﻿
+@{
+                /**/
+
+                ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Login</h2>
+@if (TempData["LoginError"] != null)
+{
+    <div class="alert alert-danger" role="alert"> @TempData["LoginError"]</div>  
+}
+<form action="/Login/CheckLogin" method="post">
+    <div class="form-group">
+        <label>Korisničko ime</label>
+        <input type="text" name="username" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Lozinka</label>
+        <input type="password" name="password" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-default">Prijavi se</button>
+</form>

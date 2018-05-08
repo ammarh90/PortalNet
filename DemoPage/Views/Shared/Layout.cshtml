@@ -21,8 +21,16 @@
                 <div class="top-menu">
                     <a href="#">Arhiva</a>
                     <a href="/Home/Contact">Kontakt</a>
-                    <a href="#">Forum</a>
-                    <a href="#">Pretraga</a>
+                    @if (Session["UserId"] == null)
+                    {
+                    <a href="/Login">Login</a>
+                    <a href="/Registration">Registracija</a>
+                    }
+                    else
+                    {
+                        <a href="/Login/Logout">Odjava</a>
+                    }
+                    
                 </div>
             </div>
             <div class="col-sm-6 col-md-6">
